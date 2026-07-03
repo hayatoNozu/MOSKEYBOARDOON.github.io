@@ -55,12 +55,12 @@
     </video>
 
     <div class="hero-content">
-      <p class="label">Original Indie Game</p>
+      <p class="label">Graduation project</p>
       <h1>
         <img src="images/moskeyboardoon.png" alt="MOSKEYBOARDOON ロゴ" />
       </h1>
       <p class="catchcopy">
-        ここにゲームのキャッチコピーを入れます。
+        音楽や即興演奏の楽しさを体験できる、音楽シューティングゲーム
       </p>
       <a href="#about" class="button">詳しく見る</a>
     </div>
@@ -73,35 +73,50 @@
         『MOSKEYBOARDOON』は、即興演奏をテーマにした音楽シューティングゲームです。
         プレイヤーは鍵盤を操作し、音楽を演奏していきます。
       </p>
+      <p>
+        このゲームの敵は蚊です。蚊には超音波を用いた撃退方法があります。
+        プレイヤーの自由な演奏で敵を撃退し、ステージをクリアしていきます。
+      </p>
+      <p>
+        オスの蚊は演奏によって撃退できますが、メスの蚊は聴覚が弱いため、撃退することができません。
+        メスの蚊を倒す方法は、潰すしかありません。
+      </p>
+
     </section>
 
     <section id="features" class="section dark">
       <h2>鍵盤デバイスの特徴</h2>
 
       <div class="cards">
-        <div class="card card-video">
+        <div class="card card-video reveal-card">
           <video class="card-bg-video" autoplay muted loop playsinline>
             <source src="videos/key-video.avi" type="video/avi" />
           </video>
-          <div class="card-content">
-            <h3>鍵盤を使って演奏</h3>
-            <p>7つの鍵盤を搭載したデバイスを2台用いて遊びます。</p>
+          <div class="card-content feature-card-content">
+            <div class="feature-card-text">
+              <h3>鍵盤を使って演奏</h3>
+              <p>7つの鍵盤を搭載したデバイスを2台用いて遊びます。</p>
+            </div>
+            <img class="feature-card-image" src="images/アセット 55.png" alt="鍵盤デバイスのイメージ" />
           </div>
         </div>
 
-        <div class="card">
-          <h3>分割・結合が可能</h3>
-          <p>2つの鍵盤デバイスはリアルタイムで分割・結合状態を判定できます。</p>
+        <div class="card reveal-card">
+          <div class="feature-card-content">
+            <div class="feature-card-text">
+              <h3>分割・結合が可能</h3>
+              <p>2つの鍵盤デバイスはリアルタイムで分割・結合状態を判定できます。</p>
+              <p>磁石とリードスイッチにより分割結合状態を判定しています。</p>
+            </div>
+            <img class="feature-card-image internal-structure" src="images/Internalstructure.png" alt="鍵盤デバイス内部構造のイメージ" />
+          </div>
         </div>
 
-        <div class="card">
+        <div class="card reveal-card">
           <h3>左右いずれかに結合すると音域が変化</h3>
-          <p>左右に結合することで、音域が1オクターブ上下に変化します</p>
-        </div>
-
-        <div class="card">
-          <h3>結合操作によって敵を撃退</h3>
-          <p>〇〇をモチーフにした個性的なビジュアルが特徴です。</p>
+          <p>左右に結合することで、音域が1オクターブ上下に変化します。</p>
+          <p>左右どちらに動いたか、加速度センサを用いて判定しています。</p>
+          <img class="feature-card-image internal-structure" src="images/Move.png" alt="鍵盤デバイス移動のイメージ" />
         </div>
       </div>
     </section>
@@ -133,10 +148,6 @@
           <th>出展日</th>
           <td>2026年9月17日（木）〜9月21日（月・祝）</td>
         </tr>
-        <tr>
-          <th>制作者</th>
-          <td>Hayato Nozu</td>
-        </tr>
       </table>
     </section>
   </main>
@@ -144,6 +155,29 @@
     <footer>
     <p>&copy; 2026 MOSKEYBOARDOON</p>
   </footer>
+
+  <script>
+    const revealCards = document.querySelectorAll('.reveal-card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const delay = Number(card.dataset.delay || 0);
+          card.style.transitionDelay = `${delay}s`;
+          card.classList.add('is-visible');
+          observer.unobserve(card);
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    revealCards.forEach((card, index) => {
+      card.dataset.delay = (index * 0.2).toString();
+      observer.observe(card);
+    });
+  </script>
 
 </body>
 </html>
