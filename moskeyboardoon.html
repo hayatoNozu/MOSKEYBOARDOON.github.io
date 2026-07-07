@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOSKEYBOARDOON</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul>
+      <li class="nav-item">
+        <a href="#about">
+          <img src="images/moskeyboardoon-button.png" alt="ABOUT" />
+          <div class="nav-label">
+            <span class="nav-label-en">ABOUT</span>
+            <span class="nav-label-ja">概要</span>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#features">
+          <img src="images/moskeyboardoon-button.png" alt="DEVICE" />
+          <div class="nav-label">
+            <span class="nav-label-en">DEVICE</span>
+            <span class="nav-label-ja">デバイス</span>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#play">
+          <img src="images/moskeyboardoon-button.png" alt="PLAY" />
+          <div class="nav-label">
+            <span class="nav-label-en">PLAY</span>
+            <span class="nav-label-ja">遊び方</span>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#info">
+          <img src="images/moskeyboardoon-button.png" alt="INFO" />
+          <div class="nav-label">
+            <span class="nav-label-en">INFO</span>
+            <span class="nav-label-ja">情報</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="videos/game-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+      <p class="label">Graduation project</p>
+      <h1>
+        <img src="images/moskeyboardoon.png" alt="MOSKEYBOARDOON ロゴ" />
+      </h1>
+      <p class="catchcopy">
+        即興演奏の楽しさを体験できる、音楽シューティングゲーム
+      </p>
+      <a href="#about" class="button">詳しく見る</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <h2>ゲーム概要</h2>
+      <p>
+        『MOSKEYBOARDOON』は、分割・結合できる鍵盤デバイスを操作しながら、自由な演奏で蚊を撃退していく音楽シューティングゲームです。
+      </p>
+      <p>
+        プレイヤーは鍵盤を押して音を奏で、演奏によって敵を攻撃します。鍵盤は左右に分離・結合することができ、分離した鍵盤を左右どちらかへ移動して結合することで、音域が1オクターブ上下します。右方向の敵を狙うときは鍵盤を右へ、左方向の敵を狙うときは鍵盤を左へ動かすことで、演奏と操作が連動した独自のプレイ体験を楽しめます。
+      </p>
+      <p>
+        本作に登場する敵は「蚊」です。蚊には超音波を用いた撃退方法があることから、プレイヤーは自分の演奏によって蚊を撃退し、ステージクリアを目指します。
+      </p>
+      <p>
+        オスの蚊は演奏によって撃退できますが、メスの蚊は聴覚が弱いため、音による撃退ができません。メスの蚊を倒すには、鍵盤を分割・結合させて挟み込む必要があります。
+      </p>
+      <p>
+        演奏にはペンタトニックスケールを採用しています。ペンタトニックスケールは不協和音になりにくい音階であり、音楽経験のないプレイヤーでも調和のとれた演奏を楽しむことができます。
+      </p>
+      <p>
+        演奏する、狙う、挟み込む。<br>
+        鍵盤デバイスならではの操作を通して、音楽の即興演奏や創造の楽しさを体験できるゲームです。
+      </p>
+
+    </section>
+
+    <section id="features" class="section dark">
+      <h2>鍵盤デバイスの特徴</h2>
+
+      <div class="cards">
+        <div class="card card-video reveal-card">
+          <video class="card-bg-video" autoplay muted loop playsinline>
+            <source src="videos/key-video.avi" type="video/avi" />
+          </video>
+          <div class="card-content feature-card-content">
+            <div class="feature-card-text">
+              <h3>鍵盤を使って演奏</h3>
+              <p>7つの鍵盤を搭載したデバイスを2台用いて遊びます。</p>
+            </div>
+            <img class="feature-card-image" src="images/アセット 55.png" alt="鍵盤デバイスのイメージ" />
+          </div>
+        </div>
+
+        <div class="card reveal-card">
+          <div class="feature-card-content">
+            <div class="feature-card-text">
+              <h3>分割・結合が可能</h3>
+              <p>2つの鍵盤デバイスはリアルタイムで分割・結合状態を判定できます。</p>
+              <p>磁石とリードスイッチにより分割結合状態を判定しています。</p>
+            </div>
+            <img class="feature-card-image internal-structure" src="images/Internalstructure.png" alt="鍵盤デバイス内部構造のイメージ" />
+          </div>
+        </div>
+
+        <div class="card reveal-card">
+          <h3>左右いずれかに結合すると音域が変化</h3>
+          <p>左右に結合することで、音域が1オクターブ上下に変化します。</p>
+          <p>左右どちらに動いたか、加速度センサを用いて判定しています。</p>
+          <img class="feature-card-image internal-structure" src="images/Move.png" alt="鍵盤デバイス移動のイメージ" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>スクリーンショット</h2>
+      <div class="youtube-container">
+        <iframe width="100%" height="515" src="https://www.youtube.com/embed/pviGRzQ9h0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section id="play" class="section dark">
+      <h2>遊び方</h2>
+      <ol class="steps">
+        <li>〇〇を操作する</li>
+        <li>〇〇を避ける / 倒す</li>
+        <li>スコアを伸ばしてクリアを目指す</li>
+      </ol>
+    </section>
+
+    <section id="info" class="section">
+      <h2>出展・公開情報</h2>
+      <table>
+        <tr>
+          <th>イベント</th>
+          <td>東京ゲームショウ2026 SELECTED INDIE 80</td>
+        </tr>
+        <tr>
+          <th>出展日</th>
+          <td>2026年9月17日（木）〜9月21日（月・祝）</td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+    <footer>
+    <p>&copy; 2026 MOSKEYBOARDOON</p>
+  </footer>
+
+  <script>
+    const revealCards = document.querySelectorAll('.reveal-card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const delay = Number(card.dataset.delay || 0);
+          card.style.transitionDelay = `${delay}s`;
+          card.classList.add('is-visible');
+          observer.unobserve(card);
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    revealCards.forEach((card, index) => {
+      card.dataset.delay = (index * 0.2).toString();
+      observer.observe(card);
+    });
+
+    const nav = document.querySelector('.nav');
+    const navToggle = document.querySelector('.nav-toggle');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', isOpen.toString());
+    });
+
+    document.querySelectorAll('.nav a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) {
+          return;
+        }
+
+        target.scrollIntoView({ behavior: 'smooth' });
+        history.replaceState(null, '', window.location.pathname);
+        nav.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
+
